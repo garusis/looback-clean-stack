@@ -8,5 +8,8 @@
   "license": "MIT",
   "engines": {
     "node": "6.9.4"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
   }
 }
