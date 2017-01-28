@@ -1,7 +1,7 @@
 # NodeJS clean stack
 
 [![Build Status](https://travis-ci.org/garusis/nodejs-clean-stack.svg?branch=master)](https://travis-ci.org/garusis/nodejs-clean-stack) 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9821dd4d218449b98e0601d58ecdc12b)](https://www.codacy.com/app/garusis/looback-clean-stack?utm_source=github.com&utm_medium=referral&utm_content=garusis/looback-clean-stack&utm_campaign=badger)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eaf22bcf5917465e8ac790a8d2387240)](https://www.codacy.com/app/garusis/nodejs-clean-stack?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garusis/nodejs-clean-stack&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/github/garusis/nodejs-clean-stack/badges/gpa.svg)](https://codeclimate.com/github/garusis/nodejs-clean-stack)
 [![Test Coverage](https://codeclimate.com/github/garusis/nodejs-clean-stack/badges/coverage.svg)](https://codeclimate.com/github/garusis/nodejs-clean-stack/coverage)
 [![Issue Count](https://codeclimate.com/github/garusis/nodejs-clean-stack/badges/issue_count.svg)](https://codeclimate.com/github/garusis/nodejs-clean-stack)
