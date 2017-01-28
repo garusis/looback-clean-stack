@@ -1,12 +1,12 @@
-# Loopback clean stack
+# NodeJS clean stack
 
 [![Build Status](https://travis-ci.org/garusis/looback-clean-stack.svg?branch=master)](https://travis-ci.org/garusis/looback-clean-stack) 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9821dd4d218449b98e0601d58ecdc12b)](https://www.codacy.com/app/garusis/looback-clean-stack?utm_source=github.com&utm_medium=referral&utm_content=garusis/looback-clean-stack&utm_campaign=badger)
 [![Code Climate](https://codeclimate.com/github/garusis/looback-clean-stack/badges/gpa.svg)](https://codeclimate.com/github/garusis/looback-clean-stack)
 [![Issue Count](https://codeclimate.com/github/garusis/looback-clean-stack/badges/issue_count.svg)](https://codeclimate.com/github/garusis/looback-clean-stack)
 
-A Loopback clean project with common utilities and settings to start coding quickly
+A NodeJS clean project with common utilities and settings to start coding quickly
 
-This Loopback project is configured to run over Node (6.1.x), Yarn (0.19.x), Gulp and ES7 features through babel.
+This NodeJS project is configured to run over Node (6.1.x), Yarn (0.19.x), Gulp and ES7 features through babel.
 
-Install, deploy and test execution instructions as well as the tool used list and its description can be found on the [Wiki](https://github.com/garusis/loopback-clean-stack/wiki) 
+Install, deploy and test execution instructions as well as the tool used list and its description can be found on the [Wiki](https://github.com/garusis/nodejs-clean-stack/wiki) 
