@@ -1,0 +1,12 @@
+{
+  "name": "loopback-clean-stack",
+  "version": "1.0.0",
+  "description": "A loopback clean project with common utilities and settings to start coding quickly",
+  "main": "dist/server/server.js",
+  "repository": "git@github.com:garusis/looback-clean-stack.git",
+  "author": "Marcos J. Alvarez <garusis@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "6.9.4"
+  }
+}
