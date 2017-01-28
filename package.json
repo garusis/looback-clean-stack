@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "A loopback clean project with common utilities and settings to start coding quickly",
   "main": "dist/server/server.js",
+  "scripts": {
+    "start": "node .",
+    "pretest": "gulp build && echo \"jshint . will disabled until ES7 is supported\"",
+    "test": "node_modules/.bin/mocha ./dist/**/*.spec.js"
+  },
   "repository": "git@github.com:garusis/looback-clean-stack.git",
   "author": "Marcos J. Alvarez <garusis@gmail.com>",
   "license": "MIT",
@@ -10,6 +15,10 @@
     "node": "6.9.4"
   },
   "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "chai": "^3.5.0",
     "gulp": "^3.9.1"
   }
 }
