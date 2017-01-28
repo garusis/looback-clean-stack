@@ -1,7 +1,9 @@
 # Loopback clean stack
 
+[![node](https://img.shields.io/node/v/gh-badges.svg?style=flat-square)](6.9.x) 
+[![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg?style=flat-square)]() 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9821dd4d218449b98e0601d58ecdc12b)](https://www.codacy.com/app/garusis/looback-clean-stack?utm_source=github.com&utm_medium=referral&utm_content=garusis/looback-clean-stack&utm_campaign=badger)
-[![node](https://img.shields.io/node/v/gh-badges.svg?style=flat-square)]() [![Travis branch](https://img.shields.io/travis/rust-lang/rust/master.svg?style=flat-square)]() [![Codacy branch coverage](https://img.shields.io/codacy/coverage/c44df2d9c89a4809896914fd1a40bedd/master.svg?style=flat-square)]() [![Code Climate](https://img.shields.io/codeclimate/issues/github/me-and/mdf.svg?style=flat-square)]() 
+[![Code Climate](https://img.shields.io/codeclimate/issues/github/me-and/mdf.svg?style=flat-square)]() 
 
 A Loopback clean project with common utilities and settings to start coding quickly
 
