@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/garusis/looback-clean-stack.svg?branch=master)](https://travis-ci.org/garusis/looback-clean-stack) 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9821dd4d218449b98e0601d58ecdc12b)](https://www.codacy.com/app/garusis/looback-clean-stack?utm_source=github.com&utm_medium=referral&utm_content=garusis/looback-clean-stack&utm_campaign=badger)
-[![Code Climate](https://img.shields.io/codeclimate/issues/github/me-and/mdf.svg?style=flat-square)]() 
+[![Code Climate](https://codeclimate.com/github/garusis/looback-clean-stack/badges/gpa.svg)](https://codeclimate.com/github/garusis/looback-clean-stack)
+[![Issue Count](https://codeclimate.com/github/garusis/looback-clean-stack/badges/issue_count.svg)](https://codeclimate.com/github/garusis/looback-clean-stack)
 
 A Loopback clean project with common utilities and settings to start coding quickly
 
