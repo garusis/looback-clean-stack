@@ -1,7 +1,26 @@
 ---
 engines:
+  nodesecurity:
+    enabled: true
+  eslint:
+    enabled: true
+    channel: "eslint-3"
+    extensions:
+        - .es6
+        - .js
+        - .jsx
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
   fixme:
     enabled: true
+  markdownlint:
+    enabled: true
 ratings:
-  paths: []
+   paths:
+   - "**.js"
+   - "**.jsx"
+   - "**.md"
 exclude_paths: []
