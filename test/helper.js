@@ -1,16 +1,16 @@
 /**
  * Created by garusis on 04/12/16.
  */
-const chai = require('chai')
-const _ = require('lodash')
-const Promise = require('bluebird')
-const moment = require('moment')
-const request = require('supertest')
-const app = require('../app')
+import {should, assert, expect} from 'chai'
+import _ from 'lodash'
+import Promise from 'bluebird'
+import moment from 'moment'
+import request from 'supertest'
+import app from  '../server/server'
 
-global.should = chai.should()
-global.expect = chai.expect
-global.assert = chai.assert
+global.should = should
+global.expect = expect
+global.assert = assert
 global.BPromise = Promise
 global.request = request
 global.moment = moment
@@ -20,9 +20,13 @@ global._ = _
 global.agent = request.agent(app)
 
 global.MathUtils = {
-    randomNumber: function (max, min) {
-        min = min || 0
-        max = max || 10
-        return min + Math.floor(Math.random() * (max - min + 1))
-    }
+  randomNumber: function (max, min) {
+    min = min || 0
+    max = max || 10
+    return min + Math.floor(Math.random() * (max - min + 1))
+  }
 }
+
+app.on("booted", function () {
+  run()
+})
