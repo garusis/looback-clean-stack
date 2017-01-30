@@ -45,10 +45,17 @@ jspm_packages
 # Output of 'npm pack'
 *.tgz
 
+# editors
+.idea
+*.sublime-*
+.DS_Store
+.project
+
 # Yarn Integrity file
 .yarn-integrity
 
 # Clean-stack files and directories
-.idea
+.strong-pm
+npm-debug.log
 dist
 
