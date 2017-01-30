@@ -26,3 +26,7 @@ global.MathUtils = {
     return min + Math.floor(Math.random() * (max - min + 1))
   }
 }
+
+app.on("booted", function () {
+  run()
+})
