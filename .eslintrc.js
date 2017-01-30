@@ -1,5 +1,4 @@
 module.exports = {
-    "extends": "loopback",
     "parserOptions": {
         "ecmaVersion": 8,
         "sourceType": "module",

@@ -39,7 +39,6 @@
     "config": "^1.24.0",
     "del": "^2.2.2",
     "eslint": "^3.14.1",
-    "eslint-config-loopback": "^7.0.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-nodemon": "^2.2.1",
