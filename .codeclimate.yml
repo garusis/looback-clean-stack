@@ -2,6 +2,9 @@
 engines:
   nodesecurity:
     enabled: true
+    exclude_fingerprints:
+        - cc1454d0b95731d14daacaf037f6a9f3
+        - dfea86b2eb0ba70aded4c2a7d086636f
   eslint:
     enabled: true
     channel: "eslint-3"
