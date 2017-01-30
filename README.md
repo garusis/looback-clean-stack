@@ -8,8 +8,8 @@
 
 A Loopback.io clean project with common utilities and settings to start coding quickly
 
-This Loopback.io project is configured to run over Node (6.1.x) with Loopback.io (3.0), Yarn (0.19.x),
-Gulp and ES7 features through babel.
+This Loopback.io project is configured to run over Node (6.1.x) with
+Loopback.io (3.0), Yarn (0.19.x), Gulp and ES7 features through babel.
 
 Install, deploy and test execution instructions as well as the tool used
 list and its description can be found on the
