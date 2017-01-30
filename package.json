@@ -2,7 +2,7 @@
   "name": "nodejs-clean-stack",
   "version": "1.0.0",
   "description": "A NodeJS clean project with common utilities and settings to start coding quickly",
-  "main": "dist/server/server.js",
+  "main": "dist/app/index.js",
   "scripts": {
     "start": "node .",
     "pretest": "gulp build && echo \"jshint . will disabled until ES7 is supported\"",
@@ -34,6 +34,7 @@
     "gulp-sourcemaps": "^2.4.0",
     "merge-stream": "^1.0.1",
     "mocha": "^3.2.0",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "supertest": "^3.0.0"
   }
 }

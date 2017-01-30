@@ -50,4 +50,5 @@ jspm_packages
 
 # Clean-stack files and directories
 .idea
+dist
 

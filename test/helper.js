@@ -5,12 +5,14 @@ const chai = require('chai')
 const _ = require('lodash')
 const Promise = require('bluebird')
 const moment = require('moment')
+const request = require('supertest')
 
 global.should = chai.should()
 global.expect = chai.expect
 global.assert = chai.assert
 global.BPromise = Promise
 global.moment = moment
+global.request = request
 global._ = _
 
 global.MathUtils = {

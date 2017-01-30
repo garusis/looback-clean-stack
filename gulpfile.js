@@ -15,11 +15,29 @@ const sourcemaps = require('gulp-sourcemaps')
 const config = require('config')
 const merge = require('merge-stream')
 const nodemon = require('gulp-nodemon')
-const Promise = require('bluebird')
+const _ = require('lodash')
 
 const info = require('./package.json')
+const globs = {
+    commonIgnored: [
+        '!./vendor/**/*', '!./node_modules/**/*',           //  Ignore libs like vendors and node_modules,
+        '!./dist/**/*',                                     //  files at dist,
+        '!./*'                                              //  and files on project root
+    ]
+}
 
-let app
+globs.copy = _.concat([
+    './**/*',                                           //  Copy all inside root folders, less
+    '!./**/*.js'                                        //  .js files that will be compiled
+], globs.commonIgnored)                                 //  and common ignored files
+
+globs.compile = _.concat([
+    './**/*.js'                                         //  Compile all .js files
+], globs.commonIgnored)                                 //  less common ignored files
+
+globs.watch = _.concat([
+    './**/*'
+], globs.commonIgnored)
 
 
 runSequence.use(gulp)
@@ -27,7 +45,7 @@ runSequence.use(gulp)
 gulp.task('clean', (cb) => del(['./dist'], cb))
 
 gulp.task('compile', function () {
-    return gulp.src(['./**/*.js', '!./vendor/**/*', '!./node_modules/**/*', '!./dist/**/*', '!./*'])
+    return gulp.src(globs.compile)
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(sourcemaps.write('.', {sourceRoot: './'}))
@@ -36,13 +54,7 @@ gulp.task('compile', function () {
 
 gulp.task('copy', function () {
     return merge([
-        gulp.src([
-            './**/*',                                           //  Copy all inside root folders, except
-            '!./**/*.js',                                       //  .js files that will be compiled,
-            '!./vendor/**/*', '!./node_modules/**/*',           //  vendors and node_modules,
-            '!./dist/**/*',                                     //  files at dist,
-            '!./*'                                              //  and files on project root
-        ]).pipe(gulp.dest('dist/'))
+        gulp.src(globs.copy).pipe(gulp.dest('dist/'))
     ])
 })
 
@@ -62,10 +74,15 @@ gulp.task('start-server', function () {
     })
 })
 
+gulp.task('watch', function (callback) {
+    gulp.watch(globs.watch, ['build'])
+})
+
+
 gulp.task('run', function (callback) {
     runSequence(
         'build',
-        'start-server',
+        ['start-server', 'watch'],
         callback
     )
 })
