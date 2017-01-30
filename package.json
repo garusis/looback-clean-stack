@@ -15,16 +15,25 @@
     "node": "6.1.0"
   },
   "dependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-preset-latest": "^6.22.0"
+    "babel-runtime": "^6.22.0",
+    "bluebird": "^3.4.7",
+    "lodash": "^4.17.4",
+    "moment": "^2.17.1"
   },
   "devDependencies": {
-    "bluebird": "^3.4.7",
+    "babel-cli": "^6.22.2",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
     "chai": "^3.5.0",
+    "config": "^1.24.0",
+    "del": "^2.2.2",
     "eslint": "^3.14.1",
     "gulp": "^3.9.1",
-    "lodash": "^4.17.4",
+    "gulp-babel": "^6.1.2",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sourcemaps": "^2.4.0",
+    "merge-stream": "^1.0.1",
     "mocha": "^3.2.0",
-    "moment": "^2.17.1"
+    "run-sequence": "^1.2.2"
   }
 }
