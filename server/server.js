@@ -9,7 +9,7 @@ import control from "strong-cluster-control"
 let app
 if (process.env.NODE_ENV === 'production') {
   if (cluster.isWorker) {
-    startWorker()
+    app = startWorker()
   } else {
     let cpuNumber = Number(process.env.CPUS) || control.CPUS
     control.start({

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "pretest": "gulp build && echo \"jshint . will disabled until ES7 is supported\"",
-    "test": "NODE_ENV=test node_modules/.bin/mocha ./dist/**/*.spec.js"
+    "test": "NODE_ENV=test node_modules/.bin/mocha --opts ./dist/test/mocha.opts ./dist/**/*.spec.js"
   },
   "repository": "git@github.com:garusis/loopback-clean-stack.git",
   "author": "Marcos J. Alvarez <garusis@gmail.com>",
