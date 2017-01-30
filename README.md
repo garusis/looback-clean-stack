@@ -1,16 +1,16 @@
-# NodeJS clean stack
+# Loopback.io clean stack
 
-[![Build Status](https://travis-ci.org/garusis/nodejs-clean-stack.svg?branch=master)](https://travis-ci.org/garusis/nodejs-clean-stack)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eaf22bcf5917465e8ac790a8d2387240)](https://www.codacy.com/app/garusis/nodejs-clean-stack?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garusis/nodejs-clean-stack&amp;utm_campaign=Badge_Grade)
-[![Code Climate](https://codeclimate.com/github/garusis/nodejs-clean-stack/badges/gpa.svg)](https://codeclimate.com/github/garusis/nodejs-clean-stack)
-[![Test Coverage](https://codeclimate.com/github/garusis/nodejs-clean-stack/badges/coverage.svg)](https://codeclimate.com/github/garusis/nodejs-clean-stack/coverage)
-[![Issue Count](https://codeclimate.com/github/garusis/nodejs-clean-stack/badges/issue_count.svg)](https://codeclimate.com/github/garusis/nodejs-clean-stack)
+[![Build Status](https://travis-ci.org/garusis/loopback-clean-stack.svg?branch=master)](https://travis-ci.org/garusis/loopback-clean-stack)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5d9c36916e85462f9372b6f541afe0db)](https://www.codacy.com/app/garusis/loopback-clean-stack?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=garusis/loopback-clean-stack&amp;utm_campaign=Badge_Grade)
+[![Code Climate](https://codeclimate.com/github/garusis/loopback-clean-stack/badges/gpa.svg)](https://codeclimate.com/github/garusis/loopback-clean-stack)
+[![Test Coverage](https://codeclimate.com/github/garusis/loopback-clean-stack/badges/coverage.svg)](https://codeclimate.com/github/garusis/loopback-clean-stack/coverage)
+[![Issue Count](https://codeclimate.com/github/garusis/loopback-clean-stack/badges/issue_count.svg)](https://codeclimate.com/github/garusis/loopback-clean-stack)
 
-A NodeJS clean project with common utilities and settings to start coding quickly
+A Loopback.io clean project with common utilities and settings to start coding quickly
 
-This NodeJS project is configured to run over Node (6.1.x), Yarn (0.19.x),
+This Loopback.io project is configured to run over Node (6.1.x) with Loopback.io (3.0), Yarn (0.19.x),
 Gulp and ES7 features through babel.
 
 Install, deploy and test execution instructions as well as the tool used
 list and its description can be found on the
-[Wiki](https://github.com/garusis/nodejs-clean-stack/wiki)
+[Wiki](https://github.com/garusis/loopback-clean-stack/wiki)
