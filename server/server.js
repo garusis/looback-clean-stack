@@ -44,7 +44,6 @@ function startWorker() {
   boot(app, __dirname, function (err) {
     if (err) throw err
 
-    app.emit("booted")
     // start the server if `$ node server.js`
     if (require.main === module)
       app.start()
