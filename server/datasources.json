@@ -1,6 +1,26 @@
 {
-  "db": {
-    "name": "db",
+  "memory": {
+    "name": "memory",
     "connector": "memory"
+  },
+  "postgresql": {
+    "name": "postgresql",
+    "connector": "postgresql"
+  },
+  "mysql": {
+    "name": "mysql",
+    "connector": "mysql"
+  },
+  "mongodb": {
+    "name": "mongodb",
+    "connector": "mongodb"
+  },
+  "filesystem": {
+    "name": "filesystem",
+    "connector": "loopback-component-storage"
+  },
+  "cloudstorage": {
+    "name": "cloudstorage",
+    "connector": "loopback-component-storage"
   }
 }
