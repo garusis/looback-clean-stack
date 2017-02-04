@@ -41,5 +41,9 @@
   "AdminAccount": {
     "dataSource": "memory",
     "public": true
+  },
+  "CronAccount": {
+    "dataSource": null,
+    "public": true
   }
 }

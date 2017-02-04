@@ -1,6 +1,6 @@
 {
-  "name": "AdminAccount",
-  "plural": "admin-accounts",
+  "name": "CronAccount",
+  "plural": "cron-accounts",
   "base": "Account",
   "idInjection": true,
   "options": {
