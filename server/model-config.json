@@ -45,5 +45,13 @@
   "CronAccount": {
     "dataSource": null,
     "public": true
+  },
+  "AccountCredential": {
+    "dataSource": null,
+    "public": false
+  },
+  "CredentialProvider": {
+    "dataSource": null,
+    "public": true
   }
 }
