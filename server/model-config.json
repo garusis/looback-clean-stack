@@ -15,22 +15,31 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": null,
+    "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": null,
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "memory",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "memory",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "memory",
     "public": false
+  },
+  "Account": {
+    "dataSource": "memory",
+    "public": false
+  },
+  "AdminAccount": {
+    "dataSource": "memory",
+    "public": true
   }
 }
