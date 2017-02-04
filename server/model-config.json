@@ -53,5 +53,9 @@
   "CredentialProvider": {
     "dataSource": null,
     "public": true
+  },
+  "AccessTokenAccount": {
+    "dataSource": null,
+    "public": true
   }
 }

@@ -25,6 +25,11 @@
       "type": "hasMany",
       "model": "AccountCredential",
       "foreignKey": "account_id"
+    },
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "AccessTokenAccount",
+      "foreignKey": "account_id"
     }
   },
   "acls": [],

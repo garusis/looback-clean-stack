@@ -1,0 +1,24 @@
+{
+  "name": "AccessTokenAccount",
+  "plural": "access-tokens",
+  "base": "AccessToken",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "registrationId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "account_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
