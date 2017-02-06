@@ -36,7 +36,11 @@
   },
   "Account": {
     "dataSource": "memory",
-    "public": true
+    "public": false
+  },
+  "AccessTokenAccount": {
+    "dataSource": "memory",
+    "public": false
   },
   "AdminAccount": {
     "dataSource": "memory",
@@ -48,13 +52,9 @@
   },
   "AccountCredential": {
     "dataSource": "memory",
-    "public": false
-  },
-  "CredentialProvider": {
-    "dataSource": "memory",
     "public": true
   },
-  "AccessTokenAccount": {
+  "CredentialProvider": {
     "dataSource": "memory",
     "public": true
   }
