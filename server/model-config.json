@@ -9,17 +9,17 @@
     "mixins": [
       "loopback/common/mixins",
       "loopback/server/mixins",
-      "../node_modules/loopback-ds-timestamp-mixin",
+      "../../node_modules/loopback-ds-timestamp-mixin",
       "../common/mixins",
       "./mixins"
     ]
   },
   "User": {
-    "dataSource": null,
+    "dataSource": "memory",
     "public": false
   },
   "AccessToken": {
-    "dataSource": null,
+    "dataSource": "memory",
     "public": false
   },
   "ACL": {
@@ -36,26 +36,26 @@
   },
   "Account": {
     "dataSource": "memory",
-    "public": false
+    "public": true
   },
   "AdminAccount": {
     "dataSource": "memory",
     "public": true
   },
   "CronAccount": {
-    "dataSource": null,
+    "dataSource": "memory",
     "public": true
   },
   "AccountCredential": {
-    "dataSource": null,
+    "dataSource": "memory",
     "public": false
   },
   "CredentialProvider": {
-    "dataSource": null,
+    "dataSource": "memory",
     "public": true
   },
   "AccessTokenAccount": {
-    "dataSource": null,
+    "dataSource": "memory",
     "public": true
   }
 }

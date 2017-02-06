@@ -1,5 +1,5 @@
-'use strict';
+"use strict"
 
-module.exports = function(Accesstokenaccount) {
+module.exports = function (AccessTokenAccount) {
 
-};
+}
