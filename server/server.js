@@ -5,12 +5,14 @@ import boot from "loopback-boot"
 import cluster from "cluster"
 import control from "strong-cluster-control"
 import moment from "moment"
+import ModelBuilder from "loopback-build-model-helper"
 
 
-let app
+let app = loopback()
+export default app
 if (process.env.NODE_ENV === 'production') {
   if (cluster.isWorker) {
-    app = startWorker()
+    startWorker()
   } else {
     let cpuNumber = Number(process.env.CPUS) || control.CPUS
     control.start({
@@ -20,13 +22,10 @@ if (process.env.NODE_ENV === 'production') {
     console.log('CPUs: ', cpuNumber)
   }
 } else {
-  app = startWorker()
+  startWorker()
 }
-export default app
 
 function startWorker() {
-  const app = loopback()
-
   app.start = function () {
     // start the web server
     return app.listen(function () {
@@ -41,6 +40,7 @@ function startWorker() {
   }
 
   moment.locale("es")
+  ModelBuilder.config({app})
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
@@ -51,6 +51,5 @@ function startWorker() {
     if (require.main === module)
       app.start()
   })
-  return app
 }
 
