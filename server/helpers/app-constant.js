@@ -1,19 +1,24 @@
 "use strict"
 import _ from "lodash"
-import app from "../server"
-import BuildHelper from "./build-helper"
+import ModelBuilder from "loopback-build-model-helper"
 
 module.exports = function (_AppConstant) {
-
-  let ResponseHelper
+  let builder = new ModelBuilder(AppConstant, _AppConstant)
 
   let hasChanges = true
   let constants = null
 
-  BuildHelper
-    .build(AppConstant, _AppConstant)
+  builder.build()
     .then(function () {
-      ResponseHelper = app.models.ResponseHelper
+      _AppConstant.observe("persist", function (ctx, next) {
+        hasChanges = true
+        next()
+      })
+
+      _AppConstant.observe("after delete", function (ctx, next) {
+        hasChanges = true
+        next()
+      })
     })
 
   AppConstant.load = async function () {
@@ -24,16 +29,11 @@ module.exports = function (_AppConstant) {
     hasChanges = false
   }
 
-  AppConstant.getPublic = async function (cb) {
-    try {
-      let publicConstants = await _AppConstant.find({where: {isPublic: true}})
-      return ResponseHelper.successHandler(publicConstants, cb)
-    } catch (err) {
-      ResponseHelper.errorHandler(err, cb)
-    }
+  AppConstant.getPublic = async function () {
+    return await _AppConstant.find({where: {isPublic: true}})
   }
-  _AppConstant.remoteMethod("getPublic", {
-    http:{
+  builder.remoteMethod("getPublic", {
+    http: {
       verb: "get"
     },
     accepts: [],
@@ -43,29 +43,13 @@ module.exports = function (_AppConstant) {
 
   /**
    *
-   * @param name
-   * @param [cb]
+   * @param {String} name
    */
-  AppConstant.findConstant = async function (name, cb) {
-    try {
-      await AppConstant.load()
-      return ResponseHelper.successHandler(constants[name].value, cb)
-    } catch (err) {
-      ResponseHelper.errorHandler(err, cb)
-    }
+  AppConstant.findConstant = async function (name) {
+    await AppConstant.load()
+    return constants[name].value
   }
 
-  _AppConstant.observe("persist", function (ctx, next) {
-    hasChanges = true
-    next()
-  })
-
-  _AppConstant.observe("after delete", function (ctx, next) {
-    hasChanges = true
-    next()
-  })
-
-  BuildHelper.assing(AppConstant, _AppConstant)
 
   function AppConstant() {
   }
