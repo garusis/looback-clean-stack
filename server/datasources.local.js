@@ -7,40 +7,28 @@ let datasources = {
   }
 }
 
-if (process.env.PG_HOST) {
-  datasources.postgresql = {
-    "host": process.env.PG_HOST,
-    "database": process.env.PG_NAME,
-    "username": process.env.PG_USERNAME,
-    "password": process.env.PG_PASSWORD,
-    "max": Number(process.env.PG_POOL_MAX) || 10,
-    "name": "postgresql",
-    "connector": "postgresql"
+function setDB(dbName, dbPrefix) {
+  datasources[dbName] = {
+    "host": process.env[`${dbPrefix}_HOST`],
+    "database": process.env[`${dbPrefix}_NAME`],
+    "username": process.env[`${dbPrefix}_USERNAME`],
+    "password": process.env[`${dbPrefix}_PASSWORD`],
+    "max": Number(process.env[`${dbPrefix}_POOL_MAX`]) || 10,
+    "name": dbName,
+    "connector": dbName
   }
+}
+
+if (process.env.PG_HOST) {
+  setDB("postgresql","PG")
 }
 
 if (process.env.MY_SQL_HOST) {
-  datasources.mysql = {
-    "host": process.env.MY_SQL_HOST,
-    "database": process.env.MY_SQL_NAME,
-    "username": process.env.MY_SQL_USERNAME,
-    "password": process.env.MY_SQL_PASSWORD,
-    "max": Number(process.env.MY_SQL_POOL_MAX) || 10,
-    "name": "mysql",
-    "connector": "mysql"
-  }
+  setDB("mysql","MY_SQL")
 }
 
 if (process.env.MONGO_HOST) {
-  datasources.mongodb = {
-    "host": process.env.MONGO_HOST,
-    "database": process.env.MONGO_NAME,
-    "username": process.env.MONGO_USERNAME,
-    "password": process.env.MONGO_PASSWORD,
-    "max": Number(process.env.MONGO_POOL_MAX) || 10,
-    "name": "mongodb",
-    "connector": "mongodb"
-  }
+  setDB("mongodb","MONGO")
 }
 
 if (process.env.USE_FILESYSTEM) {

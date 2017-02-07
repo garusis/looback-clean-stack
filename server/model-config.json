@@ -15,6 +15,18 @@
       "./mixins"
     ]
   },
+  "ValidationHelper": {
+    "dataSource": null,
+    "public": false
+  },
+  "BatchHelper": {
+    "dataSource": null,
+    "public": false
+  },
+  "Push": {
+    "dataSource": null,
+    "public": true
+  },
   "User": {
     "dataSource": "memory",
     "public": false
@@ -56,6 +68,10 @@
     "public": true
   },
   "CredentialProvider": {
+    "dataSource": "memory",
+    "public": true
+  },
+  "AppConstant": {
     "dataSource": "memory",
     "public": true
   }
