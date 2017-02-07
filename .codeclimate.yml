@@ -17,6 +17,9 @@ engines:
     config:
       languages:
       - javascript:
+    exclude_fingerprints:
+        - b5cd4ea2b22cd91de9da36dfa291ecf3
+        - 96b392f71539e3c7f0eba08777daa147
   fixme:
     enabled: true
   markdownlint:
