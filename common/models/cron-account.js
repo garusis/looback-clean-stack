@@ -1,18 +1,23 @@
 "use strict"
+import ModelBuilder from "loopback-build-model-helper"
+import app from "../../server/server"
 
-module.exports = function(CronAccount) {
+module.exports = function (_CronAccount) {
 
-  CronAccount.observe('after save', async function (ctx, next) {
-    if (ctx.isNewInstance) {
-      let RoleMapping = app.models.RoleMapping
+  let builder = new ModelBuilder(CronAccount, _CronAccount)
+  let RoleHelper
 
-      let role = await app.models.Role.findOne({where: {name: 'cron_executer'}})
-      await role.principals.create({
-        principalType: RoleMapping.USER,
-        principalId: ctx.instance.id
-      })
-    }
-    next()
+  builder.build().then(function () {
+    RoleHelper = app.models.RoleHelper
+
+    _CronAccount.observe('after save', async function (ctx, next) {
+      if (ctx.isNewInstance) {
+        await RoleHelper.assignTo('cron_executer', ctx.instance.id)
+      }
+      next()
+    })
   })
 
+  function CronAccount() {
+  }
 }

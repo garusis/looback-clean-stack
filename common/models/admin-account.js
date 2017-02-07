@@ -1,18 +1,24 @@
 "use strict"
+import ModelBuilder from "loopback-build-model-helper"
+import app from "../../server/server"
 
-module.exports = function (AdminAccount) {
+module.exports = function (_AdminAccount) {
 
-  AdminAccount.observe('after save', async function (ctx, next) {
-    if (ctx.isNewInstance) {
-      let RoleMapping = app.models.RoleMapping
+  let builder = new ModelBuilder(AdminAccount, _AdminAccount)
+  let RoleHelper
 
-      let role = await app.models.Role.findOne({where: {name: 'admin'}})
-      await role.principals.create({
-        principalType: RoleMapping.USER,
-        principalId: ctx.instance.id
-      })
-    }
-    next()
+  builder.build().then(function () {
+    RoleHelper = app.models.RoleHelper
+
+    _AdminAccount.observe('after save', async function (ctx, next) {
+      if (ctx.isNewInstance) {
+        await RoleHelper.assignTo('admin',ctx.instance.id)
+      }
+      next()
+    })
   })
 
+
+  function AdminAccount() {
+  }
 }

@@ -26,7 +26,7 @@
     "lodash": "^4.17.4",
     "loopback": "^3.2.1",
     "loopback-boot": "^2.23.0",
-    "loopback-build-model-helper": "^1.0.2",
+    "loopback-build-model-helper": "^1.0.3",
     "loopback-component-explorer": "^4.0.0",
     "loopback-component-storage": "^3.0.0",
     "loopback-connector-mongodb": "^1.18.0",
