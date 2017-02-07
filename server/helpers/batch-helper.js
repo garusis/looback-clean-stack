@@ -1,27 +1,24 @@
-'use strict';
+"use strict"
+
+import _ from "lodash"
+import dh from "debug-helper"
+import Promise from "bluebird"
+import ModelBuilder from "loopback-build-model-helper"
 
 module.exports = function (_BashHelper) {
-  const debug = require('debug')
-  const _ = require('lodash')
-  const Promise = require('bluebird')
 
-  const BuildHelper = require('../../server/build-helper');
-  const app = require('../../server/server');
-
-  let DH;
+  let builder = new ModelBuilder(BashHelper, _BashHelper)
 
   let defaultBatchSize = 50
 
-  BuildHelper
-    .build(BashHelper, _BashHelper)
+  builder.build()
     .then(function () {
-      DH = app.models.DebugHelper;
     })
 
 
   /**
    * Exec eachCb for each item that match with filter in batch. This method call to Model.find method without skip filter
-   * for get each batch so only use it when filter.where have conditions that validates that items in a batch don't
+   * for get each batch so only use it when filter.where have conditions that validates that items in a batch don"t
    * collide with items in another batch.
    * @param Model
    * @param where
@@ -48,13 +45,13 @@ module.exports = function (_BashHelper) {
 
     let batch
     while ((batch = await Model.find(filter, options)).length > 0) {
-      await execOnBatch(batch, eachCb);
+      await execOnBatch(batch, eachCb)
     }
   }
 
   /**
    * Exec eachCb for each item that match with filter in batch. This method call to Model.find method with skip filter
-   * for get each batch so use it when the results size's list don't change in each call to Model.find.
+   * for get each batch so use it when the results size"s list don"t change in each call to Model.find.
    * @param Model
    * @param where
    * @param options
@@ -82,23 +79,24 @@ module.exports = function (_BashHelper) {
     let batch
     while ((batch = await Model.find(filter, options)).length > 0) {
       filter.skip += filter.limit
-      await execOnBatch(batch, eachCb);
+      await execOnBatch(batch, eachCb)
     }
   }
 
-  function execOnBatch(batch, eachCb) {
+  async function execOnBatch(batch, eachCb) {
     if (eachCb.length === 2) {
       eachCb = Promise.promisify(eachCb)
     }
+
     let promises = _.map(batch, function (item) {
-      return eachCb(item)
-        .catch((err) => DH.debug.error(err))
+      return eachCb(item).catch((err) => dh.debug.error(err))
     })
-    return Promise.all(promises)
+
+    return await Promise.all(promises)
   }
 
   function BashHelper() {
 
   }
 
-};
+}

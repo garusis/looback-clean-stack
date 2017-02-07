@@ -22,7 +22,7 @@
       "principalType": "ROLE",
       "principalId": "admin",
       "permission": "ALLOW",
-      "property": "sendNotification"
+      "property": "send"
     }
   ],
   "methods": {}

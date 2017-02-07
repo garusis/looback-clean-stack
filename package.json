@@ -34,6 +34,7 @@
     "loopback-connector-postgresql": "^2.7.0",
     "loopback-ds-timestamp-mixin": "^3.4.0",
     "moment": "^2.17.1",
+    "node-pushnotifications": "^1.0.14",
     "options": "^0.0.6",
     "serve-favicon": "^2.3.2",
     "storage": "^0.2.0",

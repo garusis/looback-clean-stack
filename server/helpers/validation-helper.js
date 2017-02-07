@@ -1,64 +1,62 @@
-'use strict';
+"use strict"
+
+import _ from "lodash"
+import Promise from "bluebird"
 
 module.exports = function (Validationhelper) {
 
-  const _ = require('lodash');
-  const Promise = require('bluebird');
+  Validationhelper.validatesPresenceOf = async function (field, inObject, Model) {
+    let modelName = Model.definition.name
+    let value = inObject[field]
 
-  Validationhelper.validatesPresenceOf = function (field, inObject, Model) {
-    let modelName = Model.definition.name;
-    let value = inObject[field];
+    if (!_.isNil(value)) return true
 
-    if (!_.isNil(value)) {
-      return Promise.resolve();
-    }
+    let error = new Error(`The \`${modelName}\` instance is not valid. Details: \`${field}\` can't be blank (value: ${value}).`)
 
-    let error = new Error(`The \`${modelName}\` instance is not valid. Details: \`${field}\` can't be blank (value: ${value}).`);
-
-    error.name = "ValidationError";
-    error.status = 422;
-    error.statusCode = 422;
+    error.name = "ValidationError"
+    error.status = 422
+    error.statusCode = 422
     error.details = {
       "context": modelName,
       "codes": {},
       "messages": {}
-    };
+    }
     error.details.codes[field] = [
       "presence"
-    ];
+    ]
     error.details.messages[field] = [
       "can't be blank"
-    ];
+    ]
 
-    return Promise.reject(error);
-  };
+    throw error
+  }
 
-  Validationhelper.validatesDifference = function (field, comparator, inObject, Model) {
-    let modelName = Model.definition.name;
-    let value = inObject[field];
+  Validationhelper.validatesDifference = async function (field, comparator, inObject, Model) {
+    let modelName = Model.definition.name
+    let value = inObject[field]
 
     if (_.isFunction(comparator) ? !comparator(value) : value !== comparator) {
-      return Promise.resolve();
+      return true
     }
 
-    let error = new Error(`The \`${modelName}\` instance is not valid. Details: \`${field}\` can't be ${value}.`);
+    let error = new Error(`The \`${modelName}\` instance is not valid. Details: \`${field}\` can't be ${value}.`)
 
-    error.name = "ValidationError";
-    error.status = 422;
-    error.statusCode = 422;
+    error.name = "ValidationError"
+    error.status = 422
+    error.statusCode = 422
     error.details = {
       "context": modelName,
       "codes": {},
       "messages": {}
-    };
+    }
     error.details.codes[field] = [
       "equality"
-    ];
+    ]
     error.details.messages[field] = [
       `can't be ${value}`
-    ];
+    ]
 
-    return Promise.reject(error);
+    throw error
   }
 
-};
+}
