@@ -3706,6 +3706,10 @@ nodemailer@^2.5.0:
     nodemailer-smtp-transport "2.7.2"
     socks "1.1.9"
 
+nodemailer@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-3.0.2.tgz#6f5ffc608590b1980a9c24820597e60ef8182305"
+
 nodemon@^1.10.2:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.11.0.tgz#226c562bd2a7b13d3d7518b49ad4828a3623d06c"
@@ -5381,6 +5385,10 @@ xmlbuilder@>=2.4.6, xmlbuilder@^4.1.0:
 xmlcreate@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/xmlcreate/-/xmlcreate-0.1.1.tgz#a8df3b10d9d2d5704a604b92c0afc2620d708f61"
+
+xoauth2@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/xoauth2/-/xoauth2-1.2.0.tgz#f2eefac11472c971ea3bc46e554eb4b1232146e5"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.1"

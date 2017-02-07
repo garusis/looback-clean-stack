@@ -4,6 +4,7 @@ import loopback from "loopback"
 import boot from "loopback-boot"
 import cluster from "cluster"
 import control from "strong-cluster-control"
+import moment from "moment"
 
 
 let app
@@ -38,6 +39,8 @@ function startWorker() {
       }
     })
   }
+
+  moment.locale("es")
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
