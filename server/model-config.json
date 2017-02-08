@@ -78,5 +78,9 @@
   "AppConstant": {
     "dataSource": "memory",
     "public": true
+  },
+  "Gender": {
+    "dataSource": null,
+    "public": true
   }
 }
